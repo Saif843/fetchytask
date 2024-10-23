@@ -3,9 +3,11 @@ import { Octokit } from '@octokit/rest';
 import LanguageDropdown from './LanguageDropdown';
 import RepoList from './RepoList';
 import ErrorState from './ErrorState';
+ 
 // import Loader from './Loader';
 import './App.css';
 import {Link} from 'react-router-dom'
+
 
 
 
@@ -17,7 +19,7 @@ function Home() {
   const [languages, setLanguages] = useState([]);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const octokit = new Octokit({
-    auth: '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',
+    auth: process.env.REACT_APP_PERSONAL_ACCESS_TOKEN,
   });
 
 
